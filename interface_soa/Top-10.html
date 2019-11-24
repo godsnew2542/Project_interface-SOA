@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Free-list</title>
+    <title>Top 10</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -26,10 +26,6 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-
-
-
 </head>
 
 <body>
@@ -128,7 +124,7 @@
                     <!-- <i class="fas fa-fw fa-chart-area"></i> -->
                     <span style="color: black;">Top 10 Reviews</span></a>
             </li>
-
+            
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -252,7 +248,7 @@
                 <!-- End of Topbar -->
 
                 <div class="container">
-                    <table class="table table-striped" id="Free-table" style="width: 100%;">
+                    <table class="table table-striped" id="Top_10-table" style="width: 100%;">
                         <thead>
                             <tr id="list-header">
                                 <th scope="col">App</th>
@@ -327,8 +323,8 @@
 
     <script>
         $(document).ready(function () {
-            $.get(Free_list, function (responseData) {
-                $("#Free-table").DataTable({
+            $.get(Top10, function (responseData) {
+                $("#Top_10-table").DataTable({
                     processing: true,
                     data: responseData,
                     columns: [
