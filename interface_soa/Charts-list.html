@@ -302,38 +302,49 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="Link-Store.js"></script>
+    <script src="Charts-list.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $.get(Charts_list, function (responseData) {
-                $("#Charts-table").DataTable({
-                    processing: true,
-                    data: responseData,
-                    columns: [
-                        {
-                            "data": "app",
-                            "render": function (data, type, row, meta) {
-                                if (type === 'display') {
-                                    data = '<a href="index.html"' + data + '">' + data + '</a>';
-                                }
-                                return data;
-                            }
-                        },
-                        { data: "rating" },
-                        { data: "installs" },
-                        { data: "price" },
-                    ]
-                });
-            }).fail(function () {
-                alert("Can not data from URL");
+        var Category = localStorage.getItem("Category");
+        console.log(Category);
+        $(function () {
+            $.get(Charts_list, function (data) {
+                
+
+                // if(Category){}
             });
         });
+        // $(document).ready(function () {
+        //     $.get(Charts_list, function (responseData) {
+        //         $("#Charts-table").DataTable({
+        //             processing: true,
+        //             data: responseData,
+        //             columns: [
+        //                 {
+        //                     "data": "app",
+        //                     "render": function (data, type, row, meta) {
+        //                         if (type === 'display') {
+        //                             data = '<a href="index.html"' + data + '">' + data + '</a>';
+        //                         }
+        //                         return data;
+        //                     }
+        //                 },
+        //                 { data: "rating" },
+        //                 { data: "installs" },
+        //                 { data: "price" },
+        //             ]
+        //         });
+        //     }).fail(function () {
+        //         alert("Can not data from URL");
+        //     });
+        // });
     </script>
 </body>
 

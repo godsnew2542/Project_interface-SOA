@@ -1,11 +1,11 @@
 // Charts-list.html
-var Charts_list = "11";
+var Charts_list = "http://127.0.0.1:8080/category";
 // Free-list.html
 var Free_list = "11";
 // Price-list.html
 var Price_list = "11";
 // All-list.html
-var All_list = "http://127.0.0.1:8080/playstore";
+var All_list = "http://127.0.0.1:8080/all";
 // Top-Free.html
 var Top_Free = "11";
 // Top-price.html
@@ -22,6 +22,12 @@ var Rating2 = "11";
 var Rating1 = "11";
 // Top-10.html
 var Top10 = "11";
+// Free-list-Final.html
+var FreeFinal = "";
+// Price-list-Final.html
+var PriceFinal = "";
+// All-list-Final.html
+var AllFinal = "http://127.0.0.1:8080/all";
 
 
 
