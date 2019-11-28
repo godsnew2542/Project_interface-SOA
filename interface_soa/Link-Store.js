@@ -1,9 +1,9 @@
 // Category.html
 var Category = "http://127.0.0.1:8080/category";
 // Free-list.html
-var Free_list = "11";
+var Free_list = "http://127.0.0.1:8080/all/free";
 // Price-list.html
-var Price_list = "11";
+var Price_list = "http://127.0.0.1:8080/all/paid";
 // All-list.html
 var All_list = "11";
 // Top-Free.html

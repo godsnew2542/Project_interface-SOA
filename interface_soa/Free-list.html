@@ -322,7 +322,7 @@
                             "data": "app",
                             "render": function (data, type, row, meta) {
                                 if (type === 'display') {
-                                    data = '<a href="Free-list-Final.html" onclick=test("app")' + data + '">' + data + '</a>';
+                                    data = `<a style="color:#18ce18" onclick=FinalFree('${row.app}',${row.reviews});>  ${row.app}  </a>`;
                                 }
                                 return data;
                             }
@@ -336,12 +336,13 @@
                 alert("Can not data from URL");
             });
         });
-    </script>
-    <script>
-    function test(app){
-        console.log(app);
-        
-    }
+        function FinalFree(FinalFreeName,FinalFreeReviews) {
+            console.log(FinalFreeName);
+            console.log(FinalFreeReviews);
+            localStorage.setItem("dataFreeName", FinalFreeName);
+            localStorage.setItem("dataFreeReviews", FinalFreeReviews);
+            location.href = "Free-list-Final.html";
+        }
     </script>
 </body>
 

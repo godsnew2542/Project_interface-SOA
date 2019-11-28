@@ -319,7 +319,7 @@
                                     "render": function (data, type, row, meta) {
                                         if (type === 'display') {
                                             // data = '<a href="index.html"' + data + '">' + data + '</a>';
-                                            data = `<a style="color:#18ce18" onclick=Final('${row.app}');>  ${row.app}  </a>`;
+                                            data = `<a style="color:#18ce18" onclick=FinalCategory('${row.app}');>  ${row.app}  </a>`;
                                         }
                                         return data;
                                     }
@@ -329,13 +329,15 @@
                                 { data: "price" },
                             ]
                         });
-                    })
+                    }).fail(function () {
+                        alert("Can not data from URL");
+                    });
                 });
             } else {
                 console.log("No Data");
             }
         });
-        function Final(conApp) {
+        function FinalCategory(conApp) {
             console.log(conApp);
             localStorage.setItem("dataApp", conApp);
             location.href = "Category-Final.html", conApp;

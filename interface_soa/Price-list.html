@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+    <html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -309,16 +308,16 @@
 
     <script>
         $(document).ready(function () {
-            $.get(Price_list, function (responseData) {
+            $.get(Price_list, function (responseDataPrice) {
                 $("#Price-table").DataTable({
                     processing: true,
-                    data: responseData,
+                    data: responseDataPrice,
                     columns: [
                         {
                             "data": "app",
                             "render": function (data, type, row, meta) {
                                 if (type === 'display') {
-                                    data = '<a href="Price-list-Final.html"' + data + '">' + data + '</a>';
+                                    data = `<a style="color:#18ce18" onclick=Finalprice('${row.app}',${row.app});>  ${row.app}  </a>`;
                                 }
                                 return data;
                             }                          
@@ -332,6 +331,13 @@
                 alert("Can not data from URL");
             });
         });
+        function FinalPrice(FinalPriceName,FinalPriceReviews) {
+            console.log(FinalPriceName);
+            console.log(FinalPriceReviews);
+            localStorage.setItem("dataFreeName", FinalPriceName);
+            // localStorage.setItem("dataFreeReviews", FinalPriceReviews);
+            location.href = "Price-list-Final.html";
+        }
     </script>
 </body>
 
