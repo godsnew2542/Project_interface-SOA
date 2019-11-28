@@ -11,15 +11,15 @@ var Top_Free = "http://127.0.0.1:8080/top10/free";
 // Top-price.html
 var Top_Price = "http://127.0.0.1:8080/top10/paid";
 // Rating-5.html
-var Rating5 = "11";
+var Rating5 = "http://127.0.0.1:8080/rating/5";
 // Rating-4.html
-var Rating4 = "11";
+var Rating4 = "http://127.0.0.1:8080/rating/4";
 // Rating-3.html
-var Rating3 = "11";
+var Rating3 = "http://127.0.0.1:8080/rating/3";
 // Rating-2.html
-var Rating2 = "11";
+var Rating2 = "http://127.0.0.1:8080/rating/2";
 // Rating-1.html
-var Rating1 = "11";
+var Rating1 = "http://127.0.0.1:8080/rating/1";
 // Top-10.html
 var Top10 = "http://127.0.0.1:8080/reviews/top10";
 // Free-list-Final.html
