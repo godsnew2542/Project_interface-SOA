@@ -1,20 +1,9 @@
 var con =[];
 $(function() {
-  $.get(Charts_list, function(data) {
+  $.get(Category, function(data) {
     
     for (var i = 0; i < data.length; i++) {
-      // Charts-list.html
       con.push(data[i].category);
-      // var Category =
-      // `<div>
-      //   <u style="color:#18ce18" value="` + data[i] + `">` +
-      //   [i + 1] +
-      //   " " +
-      //   data[i].category +
-      //   "</u>" +
-      //   "<br>"
-      //   "</div>";
-      // $("#Charts-list").append(Category);
     }
     $("#Charts-list").empty();
     for (var i=0; i<con.length; i++){

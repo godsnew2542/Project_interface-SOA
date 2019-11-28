@@ -1,11 +1,11 @@
-// Charts-list.html
-var Charts_list = "http://127.0.0.1:8080/category";
+// Category.html
+var Category = "http://127.0.0.1:8080/category";
 // Free-list.html
 var Free_list = "11";
 // Price-list.html
 var Price_list = "11";
 // All-list.html
-var All_list = "http://127.0.0.1:8080/all";
+var All_list = "11";
 // Top-Free.html
 var Top_Free = "11";
 // Top-price.html

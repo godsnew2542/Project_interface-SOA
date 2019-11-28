@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -7,7 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Category-list</title>
+    <title>Category Final</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -208,6 +213,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">log out</span>
+                                <!-- <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             </a>
                             <!-- Dropdown - User Information -->
@@ -224,20 +230,67 @@
                 <!-- End of Topbar -->
 
                 <div class="container">
-                    <table class="table table-striped" id="Charts-table" style="width: 100%;">
-                        <thead>
-                            <tr id="list-header">
-                                <th scope="col">App</th>
-                                <th scope="col">Rating</th>
-                                <th scope="col">Installs</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                    </table>
+                    <div class="card" >
+                        <div class="row container" style="margin-top: 2%;">
+                            <div class="col-sm" id="Appname">
+
+                            </div>
+                            <div class="col-sm" id="Content_Rating">
+                                
+                            </div>
+                        </div>
+                        <hr class="sidebar-divider">
+                        <div class="row">
+                            <div class="col-sm container" id="Rat">
+                                
+                            </div>
+                            <div class="col-sm" id="Genres">
+                                
+                            </div>
+                            <div class="col-sm" id="Category">
+                                
+                            </div>
+                        </div>
+                        <hr class="sidebar-divider">
+                        <div class="row">
+                            <div class="col-sm container" id="Size">
+                                
+                            </div>
+                            <div class="col-sm" id="Installs">
+                                
+                            </div>
+                            <div class="col-sm" id="Type-Price">
+                                
+                            </div>
+                        </div>
+                        <hr class="sidebar-divider ">
+                        <div class="container" id="DAta">
+                            <!-- About App: Suport {Android_Ver} Current_Ver last_Updated -->
+                        </div>
+                        <div style="margin-top: 2%;"></div>
+                        <div class="container">
+                            <table class="table table-bordered" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Review</th>
+                                        <th scope="col">Sentiment</th>
+                                        <th scope="col">Polarity</th>
+                                        <th scope="col">Subjectivity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="col" id="REview"></th>
+                                        <th scope="col">Sentiment@@</th>
+                                        <th scope="col">Polarity@@</th>
+                                        <th scope="col">Subjectivity@@</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-
                 <div style="margin-top: 10%;"></div>
-
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
@@ -270,8 +323,7 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.
-                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                         <a class="btn btn-primary" href="login.html">Logout</a>
@@ -281,6 +333,7 @@
         </div>
     </div>
 
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -288,60 +341,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="Link-Store.js"></script>
     <script src="Charts-list.js"></script>
-
-    <script>
-        $(function () {
-            var Category = localStorage.getItem("Category");
-            console.log(Category);
-            var Charts_list = "http://127.0.0.1:8080/category/" + Category;
-            if (Category == Category) {
-                $(document).ready(function () {
-                    $.get(Charts_list, function (dataN) {
-                        $("#Charts-table").DataTable({
-                            processing: true,
-                            data: dataN,
-                            columns: [
-                                {
-                                    "data": "app",
-                                    "render": function (data, type, row, meta) {
-                                        if (type === 'display') {
-                                            // data = '<a href="index.html"' + data + '">' + data + '</a>';
-                                            data = `<a style="color:#18ce18" onclick=Final('${row.app}');>  ${row.app}  </a>`;
-                                        }
-                                        return data;
-                                    }
-                                },
-                                { data: "rating" },
-                                { data: "installs" },
-                                { data: "price" },
-                            ]
-                        });
-                    })
-                });
-            } else {
-                console.log("No Data");
-            }
-        });
-        function Final(conApp) {
-            console.log(conApp);
-            localStorage.setItem("dataApp", conApp);
-            location.href = "Category-Final.html", conApp;
-        }
-    </script>
-    <!-- <script src="Category-Final.js"></script> -->
+    <script src="Category-Final.js"></script>
 </body>
 
 </html>
