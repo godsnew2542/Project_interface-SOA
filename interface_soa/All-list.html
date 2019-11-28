@@ -144,20 +144,6 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -332,7 +318,7 @@
                             "data": "app",
                             "render": function (data, type, row, meta) {
                                 if (type === 'display') {
-                                    data = '<a href="All-list-Final.html"' + data + '">' + data + '</a>';
+                                    data = `<a style="color:#18ce18" onclick=FinalAll('${row.app}');>  ${row.app}  </a>`;
                                 }
                                 return data;
 
@@ -344,12 +330,17 @@
                         { data: "price" },
                     ]
                 });
-                table.ajax.reload(data);
-                console.log(data);
             }).fail(function () {
                 alert("Can not data from URL");
             });
         });
+        function FinalAll(FinalAllName) {
+            console.log(FinalAllName);
+            // console.log(FinalFreeReviews);
+            localStorage.setItem("FinalAllName", FinalAllName);
+            // localStorage.setItem("dataFreeReviews", FinalFreeReviews);
+            location.href = "All-list-Final.html";
+        }
     </script>
 </body>
 

@@ -96,6 +96,18 @@ $(function() {
       $("#REview").append();
       var table1 = `${Review}`;
       $("#REview").append(table1);
+
+      console.log(appname);
+      console.log(Content_Rating1);
+      console.log(Rating1);
+      console.log(Genres1);
+      console.log(Category1);
+      console.log(Size1);
+      console.log(Installs1);
+      console.log(Type1);
+      console.log(DAta1);
+      console.log(table1);
+      
     });
   } else {
     console.log("NO data");

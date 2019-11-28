@@ -8,15 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Free-list</title>
+    <title>Top 10 Final</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Datatabli -->
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,10 +22,6 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-
-
-
 </head>
 
 <body>
@@ -238,16 +230,65 @@
                 <!-- End of Topbar -->
 
                 <div class="container">
-                    <table class="table table-striped" id="Free-table" style="width: 100%;">
-                        <thead>
-                            <tr id="list-header">
-                                <th scope="col">App</th>
-                                <th scope="col">Rating</th>
-                                <th scope="col">Installs</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                    </table>
+                    <div class="card" >
+                        <div class="row container" style="margin-top: 2%;">
+                            <div class="col-sm" id="Appname">
+
+                            </div>
+                            <div class="col-sm" id="Content_Rating">
+                                
+                            </div>
+                        </div>
+                        <hr class="sidebar-divider">
+                        <div class="row">
+                            <div class="col-sm container" id="Rat">
+                                
+                            </div>
+                            <div class="col-sm" id="Genres">
+                                
+                            </div>
+                            <div class="col-sm" id="Category">
+                                
+                            </div>
+                        </div>
+                        <hr class="sidebar-divider">
+                        <div class="row">
+                            <div class="col-sm container" id="Size">
+                                
+                            </div>
+                            <div class="col-sm" id="Installs">
+                                
+                            </div>
+                            <div class="col-sm" id="Type-Price">
+                                
+                            </div>
+                        </div>
+                        <hr class="sidebar-divider ">
+                        <div class="container" id="DAta">
+                            <!-- About App: Suport {Android_Ver} Current_Ver last_Updated -->
+                        </div>
+                        <div style="margin-top: 2%;"></div>
+                        <div class="container">
+                            <table class="table table-bordered" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Review</th>
+                                        <th scope="col">Sentiment</th>
+                                        <th scope="col">Polarity</th>
+                                        <th scope="col">Subjectivity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="col" id="REview"></th>
+                                        <th scope="col">Sentiment@@</th>
+                                        <th scope="col">Polarity@@</th>
+                                        <th scope="col">Subjectivity@@</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <div style="margin-top: 10%;"></div>
                 <!-- Footer -->
@@ -292,7 +333,6 @@
         </div>
     </div>
 
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -307,43 +347,8 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="Link-Store.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $.get(Free_list, function (responseData) {
-                $("#Free-table").DataTable({
-                    processing: true,
-                    data: responseData,
-                    columns: [
-                        {
-                            "data": "app",
-                            "render": function (data, type, row, meta) {
-                                if (type === 'display') {
-                                    data = `<a style="color:#18ce18" onclick=FinalFree('${row.app}');>  ${row.app}  </a>`;
-                                }
-                                return data;
-                            }
-                        },
-                        { data: "rating" },
-                        { data: "installs" },
-                        { data: "price" },
-                    ]
-                });
-            }).fail(function () {
-                alert("Can not data from URL");
-            });
-        });
-        function FinalFree(FinalFreeName,FinalFreeReviews) {
-            console.log(FinalFreeName);
-            console.log(FinalFreeReviews);
-            localStorage.setItem("dataFreeName", FinalFreeName);
-            localStorage.setItem("dataFreeReviews", FinalFreeReviews);
-            location.href = "Free-list-Final.html";
-        }
-    </script>
+    <script src="Top-10-Final.js"></script>
 </body>
 
 </html>

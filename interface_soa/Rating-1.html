@@ -320,33 +320,7 @@
     <!-- Core plugin JavaScript-->
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="Link-Store.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $.get(Rating1, function (responseData) {
-                $("#Rating_1-table").DataTable({
-                    processing: true,
-                    data: responseData,
-                    columns: [
-                        {
-                            "data": "app",
-                            "render": function (data, type, row, meta) {
-                                if (type === 'display') {
-                                    data = '<a href="index.html"' + data + '">' + data + '</a>';
-                                }
-                                return data;
-                            }
-                        },
-                        { data: "rating" },
-                        { data: "installs" },
-                        { data: "price" },
-                    ]
-                });
-            }).fail(function () {
-                alert("Can not data from URL");
-            });
-        });
-    </script>
+    <script src="Rating-1.js"></script>
 </body>
 
 </html>

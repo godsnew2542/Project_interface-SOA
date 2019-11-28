@@ -1,8 +1,6 @@
-var Finalprice = localStorage.getItem("Finalprice");
-console.log(Finalprice);
-// var FinalPriceReviews = localStorage.getItem("FinalPriceReviews");
-// console.log(FinalPriceReviews);
-var Finalla = "http://127.0.0.1:8080/all/" + Finalprice;
+var TopFerrName = localStorage.getItem("TopFerrName");
+console.log(TopFerrName);
+var Finalla = "http://127.0.0.1:8080/all/" + TopFerrName;
 console.log(Finalla);
 
 var nameApp = [];
@@ -23,7 +21,7 @@ var Polarity = [];
 var Subjectivity = [];
 
 $(function() {
-  if (Finalprice == Finalprice) {
+  if (TopFerrName == TopFerrName) {
     $.get(Finalla, function(datafinal) {
       console.log("yes");
       for (var x = 0; x < datafinal.length; x++) {
@@ -41,7 +39,19 @@ $(function() {
         Review.push(datafinal[x].reviews);
         last_Updated.push(datafinal[x].last_Updated);
       }
-
+      // console.log(nameApp);
+      // console.log(Content_Rating);
+      console.log(Rating);
+      // console.log(Genres);
+      // console.log(Category);
+      // console.log(Size);
+      // console.log(Installs);
+      // console.log(Type);
+      // console.log(Price);
+      // console.log(Android_Ver);
+      // console.log(Current_Ver);
+      console.log(Review);
+      // console.log(last_Updated);
       //------1----------
       $("#Appname").append();
       var appname = `Appname: ${nameApp}`;
@@ -81,7 +91,7 @@ $(function() {
       $("#DAta").append();
       var DAta1 = `About App: Suport Android Version ${Android_Ver}  ${Current_Ver} : Latest Update ${last_Updated}`;
       $("#DAta").append(DAta1);
-
+      
       //------Table----------
       $("#REview").append();
       var table1 = `${Review}`;
@@ -97,6 +107,7 @@ $(function() {
       console.log(Type1);
       console.log(DAta1);
       console.log(table1);
+      
     });
   } else {
     console.log("NO data");

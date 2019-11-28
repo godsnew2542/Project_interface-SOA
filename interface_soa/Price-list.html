@@ -317,7 +317,7 @@
                             "data": "app",
                             "render": function (data, type, row, meta) {
                                 if (type === 'display') {
-                                    data = `<a style="color:#18ce18" onclick=Finalprice('${row.app}',${row.app});>  ${row.app}  </a>`;
+                                    data = `<a style="color:#18ce18" onclick=Finalprice('${row.app}');>  ${row.app}  </a>`;
                                 }
                                 return data;
                             }                          
@@ -331,11 +331,9 @@
                 alert("Can not data from URL");
             });
         });
-        function FinalPrice(FinalPriceName,FinalPriceReviews) {
+        function Finalprice(FinalPriceName) {
             console.log(FinalPriceName);
-            console.log(FinalPriceReviews);
-            localStorage.setItem("dataFreeName", FinalPriceName);
-            // localStorage.setItem("dataFreeReviews", FinalPriceReviews);
+            localStorage.setItem("Finalprice", FinalPriceName);
             location.href = "Price-list-Final.html";
         }
     </script>
