@@ -28,28 +28,3 @@ var FreeFinal = "";
 var PriceFinal = "";
 // All-list-Final.html
 var AllFinal = "11";
-
-
-
-// $(document).ready(function() {
-//   $.get(Free_list, function(responseData) {
-//     $("#Free-table").DataTable({
-//       processing: true,
-//       data: responseData,
-//         columns: [
-//           { 
-//             "data": "app",
-//             "render": function(data, type, row, meta){
-//                if(type === 'display'){
-//                    data = '<a href="index.html"' + data + '">' + data + '</a>';
-//                }   
-//                return data;
-//             }
-//          },
-//           { data: "rating" },
-//           { data: "installs" },
-//           { data: "price" },         
-//         ]    
-//     });
-//   });
-// });

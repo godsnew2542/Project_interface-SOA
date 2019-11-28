@@ -1,6 +1,6 @@
 var TopFerrName = localStorage.getItem("TopFerrName");
 console.log(TopFerrName);
-var Finalla = "http://127.0.0.1:8080/all/" + TopFerrName;
+var Finalla = "http://127.0.0.1:8080/top10/free/" + TopFerrName;
 console.log(Finalla);
 
 var nameApp = [];
