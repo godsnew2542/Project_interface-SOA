@@ -2,19 +2,16 @@ var Reting1 = localStorage.getItem("Reting1");
 console.log(Reting1);
 var Finalla = "http://127.0.0.1:8080/all/" + Reting1;
 console.log(Finalla);
+var Finallatable = "http://127.0.0.1:8080/app/reviews/" + Reting1;
+console.log(Finallatable);
 
 var nameApp = [];
 var Content_Rating = [];
 var Rating = [];
-var Genres = [];
 var Category = [];
 var Size = [];
-var Installs = [];
 var Type = [];
 var Price = [];
-var Android_Ver = [];
-var Current_Ver = [];
-var last_Updated = [];
 var Review = [];
 var Sentiment = [];
 var Polarity = [];
@@ -28,30 +25,11 @@ $(function() {
         nameApp.push(datafinal[x].app);
         Content_Rating.push(datafinal[x].content_Rating);
         Rating.push(datafinal[x].rating);
-        Genres.push(datafinal[x].genres);
         Category.push(datafinal[x].category);
         Size.push(datafinal[x].size);
-        Installs.push(datafinal[x].installs);
         Type.push(datafinal[x].type);
         Price.push(datafinal[x].price);
-        Android_Ver.push(datafinal[x].android_Ver);
-        Current_Ver.push(datafinal[x].current_Ver);
-        Review.push(datafinal[x].reviews);
-        last_Updated.push(datafinal[x].last_Updated);
       }
-      // console.log(nameApp);
-      // console.log(Content_Rating);
-      console.log(Rating);
-      // console.log(Genres);
-      // console.log(Category);
-      // console.log(Size);
-      // console.log(Installs);
-      // console.log(Type);
-      // console.log(Price);
-      // console.log(Android_Ver);
-      // console.log(Current_Ver);
-      console.log(Review);
-      // console.log(last_Updated);
       //------1----------
       $("#Appname").append();
       var appname = `Appname: ${nameApp}`;
@@ -66,10 +44,6 @@ $(function() {
       var Rating1 = `Rating: ${Rating}`;
       $("#Rat").append(Rating1);
 
-      $("#Genres").append();
-      var Genres1 = `Genres: ${Genres}`;
-      $("#Genres").append(Genres1);
-
       $("#Category").append();
       var Category1 = `Category: ${Category}`;
       $("#Category").append(Category1);
@@ -79,35 +53,22 @@ $(function() {
       var Size1 = `Size: ${Size}`;
       $("#Size").append(Size1);
 
-      $("#Installs").append();
-      var Installs1 = `Installs: ${Installs}`;
-      $("#Installs").append(Installs1);
-
       $("#Type-Price").append();
       var Type1 = `Type And Price: ${Type} : ${Price}`;
       $("#Type-Price").append(Type1);
-
-      //------4----------
-      $("#DAta").append();
-      var DAta1 = `About App: Suport Android Version ${Android_Ver}  ${Current_Ver} : Latest Update ${last_Updated}`;
-      $("#DAta").append(DAta1);
       
-      //------Table----------
-      $("#REview").append();
-      var table1 = `${Review}`;
-      $("#REview").append(table1);
+      $.get(Finallatable, function(datafinalTable) {
+        for (var i = 0; i < datafinalTable.length; i++) {
+          Review.push(
+            datafinalTable[i].translate_Reviews +
+              '<hr class="sidebar-divider"> <br>'
+          );
+        }
 
-      console.log(appname);
-      console.log(Content_Rating1);
-      console.log(Rating1);
-      console.log(Genres1);
-      console.log(Category1);
-      console.log(Size1);
-      console.log(Installs1);
-      console.log(Type1);
-      console.log(DAta1);
-      console.log(table1);
-      
+        $("#REview").append();
+        var table1 = `${Review} <br>`;
+        $("#REview").append(table1);
+      });
     });
   } else {
     console.log("NO data");
