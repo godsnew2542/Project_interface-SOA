@@ -252,13 +252,14 @@
 
     <!-- Core plugin JavaScript-->
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="Link-Store.js"></script>
+    <!-- <script src="Link-Store.js"></script> -->
     <script>
+        var Rating1 = "http://127.0.0.1:8080/rating/1";
         $(document).ready(function () {
-            $.get(Rating1, function (responseData) {
+            $.get(Rating1, function (responseData1) {
                 $("#Rating_1-table").DataTable({
                     processing: true,
-                    data: responseData,
+                    data: responseData1,
                     columns: [
                         {
                             "data": "app",
