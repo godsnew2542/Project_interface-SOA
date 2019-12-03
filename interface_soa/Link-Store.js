@@ -19,12 +19,5 @@ var Rating3 = "http://127.0.0.1:8080/rating/3";
 // Rating-2.html
 var Rating2 = "http://127.0.0.1:8080/rating/2";
 // Rating-1.html
-
 // Top-10.html
 var Top10 = "http://127.0.0.1:8080/reviews/top10";
-// Free-list-Final.html
-var FreeFinal = "";
-// Price-list-Final.html
-var PriceFinal = "";
-// All-list-Final.html
-var AllFinal = "11";
